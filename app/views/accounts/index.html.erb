@@ -1,0 +1,42 @@
+<div class="form-container">
+  <h2>Opening Account</h2>
+
+  <div class="form-actions">
+    <%= link_to "New Account", new_account_path, class: "btn btn-save" %>
+  </div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Account Number</th>
+      <th>Holder Name</th>
+      <th>Opening Amount</th>
+      <th>Opening Bonus</th>
+      <th>Closing Amount</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @accounts.each_with_index do |account, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= account.account_number %></td>
+        <td><%= account.account_holder_name %></td>
+        <td><%= number_to_currency(account.opening_amount, unit: "₹") %></td>
+        <td><%= number_to_currency(account.opening_bonus, unit: "₹") %></td>
+        <td><%= number_to_currency(account.closing_amount, unit: "₹") %></td>
+        <td class="action-buttons">
+          <%= link_to edit_account_path(account), class: "btn-action edit" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+
+          <%= button_to account_path(account), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-action delete' do %>
+            <i class="fas fa-trash-alt" style="color: red;"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
