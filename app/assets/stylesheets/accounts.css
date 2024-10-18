@@ -3,10 +3,11 @@ body {
     font-family: 'Arial', sans-serif;
     font-size: 14px;
     color: #333;
+    background-color: #FFFFFF; /* Updated for contrast */
 }
 
 h2 {
-    color: #f7981d;
+    color: #F7981D; /* Primary Color */
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -31,7 +32,7 @@ h2 {
     font-weight: bold;
     margin-bottom: 8px;
     font-size: 14px;
-    color: #333;
+    color: #333; /* Text Color */
 }
 
 .form-control {
@@ -40,7 +41,7 @@ h2 {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
-    color: #333;
+    color: #333; /* Text Color */
 }
 
 .form-actions {
@@ -58,13 +59,13 @@ h2 {
 }
 
 .btn-save {
-    background-color: #f7981d;
+    background-color: #F7981D; /* Primary Color */
     color: white;
     margin-right: 10px;
 }
 
 .btn-reset {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Light background */
     color: black;
     border: 1px solid #ccc;
 }
@@ -84,21 +85,21 @@ h2 {
 }
 
 .table th {
-    background-color: #f2f2f2;
+    background-color: #F2F2F2; /* Light Gray */
     font-weight: bold;
-    color: #333;
+    color: #333; /* Text Color */
 }
 
 .table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #F9F9F9; /* Alternating row color */
 }
 
 .table tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: #F1F1F1; /* Hover effect */
 }
 
 .table td {
-    color: #333;
+    color: #333; /* Text Color */
 }
 
 /* Action Buttons in Table */
@@ -108,30 +109,21 @@ h2 {
 }
 
 .btn-action.edit {
-    color: #f7981d;
+    color: #F7981D; /* Primary Color */
 }
 
 .btn-action.delete {
-    color: red;
+    color: #D9534F; /* Error Color */
 }
 
 .btn-action i {
     font-size: 18px;
 }
 
-.btn-save {
-    background-color: #f7981d;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
+.btn-save:hover {
+    background-color: #E08A16; /* Darker shade for hover */
 }
 
-.btn-save:hover {
-    background-color: #e08a16;
-}
 .action-buttons {
     display: flex;
     align-items: center;
@@ -141,10 +133,6 @@ h2 {
     border: none;
     background: none;
     cursor: pointer;
-}
-
-.btn-action.delete i {
-    font-size: 18px;
 }
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
