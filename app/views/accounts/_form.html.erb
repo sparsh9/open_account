@@ -3,28 +3,40 @@
   <%= form_with model: @account, local: true do |form| %>
     <div class="form-row">
       <div class="form-group">
+        <%= form.label :account_number, "Account Number" %>
+        <%= form.text_field :account_number, class: "form-control", value: @account.account_number, disabled: true %>
+      </div>
+
+      <div class="form-group">
         <%= form.label :account_holder_name, "Account Holder Name*" %>
-        <%= form.text_field :account_holder_name, class: "form-control", placeholder: "Enter Account Holder Name" %>
+        <%= form.text_field :account_holder_name, class: "form-control", value: @account.account_holder_name, placeholder: "Enter Account Holder Name" %>
+      </div>
+    </div>
+
+
+
+    <div class="form-row">
+      <div class="form-group">
+        <%= form.label :opening_amount, "Opening Amount*" %>
+        <%= form.number_field :opening_amount, class: "form-control", value: @account.opening_amount, placeholder: "Enter Opening Amount" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :opening_bonus, "Opening Bonus*" %>
+        <%= form.number_field :opening_bonus, class: "form-control", value: @account.opening_bonus, placeholder: "Enter Opening Bonus" %>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group">
-        <%= form.label :opening_amount, "Opening Amount*" %>
-        <%= form.number_field :opening_amount, class: "form-control", placeholder: "Enter Opening Amount" %>
-      </div>
-
-      <div class="form-group">
-        <%= form.label :opening_bonus, "Opening Bonus*" %>
-        <%= form.number_field :opening_bonus, class: "form-control", placeholder: "Enter Opening Bonus" %>
+        <%= form.label :closing_amount, "Closing Amount" %>
+        <%= form.number_field :closing_amount, class: "form-control", value: @account.closing_amount, disabled: true %>
       </div>
     </div>
 
     <div class="form-actions">
-      <%= form.submit "Save", class: "btn btn-save" %>
-      <% unless @account.persisted? %>
-        <%= link_to "Reset", new_account_path, class: "btn btn-reset" %>
-      <% end %>
+      <%= form.submit "Update", class: "btn btn-save" %>
+      <%= link_to "Cancel", accounts_path, class: "btn btn-reset" %>
     </div>
   <% end %>
 </div>
